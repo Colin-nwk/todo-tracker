@@ -1,0 +1,43 @@
+$primary-color: #e50914;
+$dark-color: #141414;
+
+// background
+@mixin ease-out {
+	transition: all 0.5s ease-out;
+}
+
+// transition
+@mixin ease-out {
+	transition: all 0.5s ease-out;
+}
+
+// Set text color
+@function set-text-color($color) {
+	@if (lightness($color)> 40) {
+		@return #000;
+	} @else {
+		@return #fff;
+	}
+}
+
+// media query mixins
+@mixin media-sm {
+	@media screen and (max-width: 500px) {
+		@content;
+	}
+}
+@mixin media-md {
+	@media screen and (max-width: 768px) {
+		@content;
+	}
+}
+@mixin media-lg {
+	@media screen and (min-width: 769px) and (max-width: 1170px) {
+		@content;
+	}
+}
+@mixin media-xl {
+	@media screen and (max-width: 1171px) {
+		@content;
+	}
+}
