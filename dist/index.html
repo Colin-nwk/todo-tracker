@@ -9,67 +9,76 @@
     <title>Todo Tracker</title>
   </head>
 
-  <body>
+  <body class="bg-light">
     <header class="container">
-      <nav class="row">
-        <a href="#"><i></i>Logo</a>
-        <h1 class="display-4">Todo <span>Tracker</span></h1>
-        <div>
-          <i class="fas fa-user-circle"></i>
-          welcome Collins
+      <nav class="row m-3 my-header">
+        <div class="">
+          <i class="fas fa-code fa-2x text-danger"></i>
+          <p>cMix</p>
+        </div>
+        <h1 class="header-title">
+          Todo <span class="text-success">Tracker</span>
+        </h1>
+        <div class="">
+          <i class="fas fa-user-circle fa-3x text-success"></i>
+          <p>
+            Welcome
+          </p>
         </div>
       </nav>
     </header>
-    <main class="container">
-      <div class="row mt-5">
-        <div class="col-md-4">
-          <button class="btn btn-primary btn-block">
-            <i class="fas fa-plus"></i>
-            Add new task
-          </button>
-        </div>
-        <div class="col-md-6 offset-2">
-          <form>
-            <input
-              type="search"
-              class="form-control"
-              placeholder="search task"
-            />
+    <main class="container card card-body mb-2">
+      <div class="row mt-4">
+        <div class="col-md-5">
+          <form action="#" class="form-inline">
+            <input type="text" class="form-control" />
+            <input class="btn btn-primary" type="submit" value="submit" />
           </form>
         </div>
+        <div class="col-md-5 offset-2">
+          <input type="search" class="form-control" placeholder="search task" />
+        </div>
       </div>
-      <div class="row mt-5">
-        <div class="col-md-3">
-          <div class="row">
-            <h3 class="display-5 bg-primary p-2 text-white rounded">
-              new projects
-            </h3>
-          </div>
-          <ul id="new-task"></ul>
+      <hr />
+      <div class="row my-5">
+        <div class="col-md-4">
+          <p class="bg-primary text-white p-2 text-center">
+            new projects
+          </p>
+          <ul class="list-group" id="new-items">
+            <li class="list-group-item">
+              Item 1
+              <button class="btn btn-danger btn-sm float-right delete">
+                X
+              </button>
+            </li>
+          </ul>
         </div>
-        <div class="col-md-3">
-          <div class="row">
-            <h3 class="display-5 bg-warning p-2 text-white rounded">
-              In progress
-            </h3>
-          </div>
-          <ul id="new-task"></ul>
+        <div class="col-md-4">
+          <p class="bg-warning text-white p-2 text-center">
+            in progress
+          </p>
+          <ul class="list-group" id="in-progress">
+            <li class="list-group-item">
+              Item 1
+              <button class="btn btn-danger btn-sm float-right delete">
+                X
+              </button>
+            </li>
+          </ul>
         </div>
-        <div class="col-md-3">
-          <div class="row">
-            <h3 class="display-5 bg-success p-2 text-white rounded">
-              Completed
-            </h3>
-          </div>
-          <ul id="new-task"></ul>
-        </div>
-        <div class="col-md-3">
-          <div class="row">
-            <h3 class="display-5 bg-danger p-2 text-white rounded">
-              new projects
-            </h3>
-          </div>
-          <ul id="new-task"></ul>
+        <div class="col-md-4">
+          <p class="bg-success text-white p-2 text-center">
+            completed
+          </p>
+          <ul class="list-group" id="completed">
+            <li class="list-group-item">
+              Item 1
+              <button class="btn btn-danger btn-sm float-right delete">
+                X
+              </button>
+            </li>
+          </ul>
         </div>
       </div>
     </main>

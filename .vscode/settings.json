@@ -14,5 +14,8 @@
         "activityBar.background": "#360D82",
         "titleBar.activeBackground": "#4C12B7",
         "titleBar.activeForeground": "#FDFBFF"
-    }
+    },
+    "cSpell.ignoreWords": [
+        "cmix"
+    ]
 }

@@ -1,3 +1,22 @@
 @import './resets';
 @import './config';
 @import './utilities';
+
+
+.my-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    div {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+
+        p {
+
+            padding-top: 5px;
+            font-size: 2rem;
+        }
+    }
+}
