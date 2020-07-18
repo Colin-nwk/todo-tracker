@@ -5,8 +5,7 @@ const todoForm = document.querySelector("#todo-form"),
   todoArea = document.querySelector("#row"),
   searchTodo = document.querySelector("#search"),
   filteredList = document.querySelector("#filter");
-// const moveTodo = document.querySelectorAll(".list-group-item");
-// const moveTodo =
+
 // create a new task
 todoForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -17,8 +16,10 @@ todoForm.addEventListener("submit", (e) => {
   } else {
     //create new task li
     let li = document.createElement("li");
-    li.className = "list-group-item";
+    li.className = "list-group-item movable";
+    li.id = "movable";
     li.setAttribute("draggable", "true");
+    li.setAttribute("ondragstart", "drag(event)");
 
     li.innerHTML = todo.value;
     //create delete btn inside li
@@ -42,21 +43,37 @@ todoArea.addEventListener("click", (e) => {
   }
 });
 
+// // filter tasks
+// searchTodo.addEventListener("keyup", filterItems);
+
+// function filterItems(e) {
+//   let text = e.target.value.toLowerCase();
+
+//   //loop through all the todos on various stages
+//   let items = todoArea.getElementsByTagName("li");
+//   Array.from(items).forEach(function (item) {
+//     let itemName = item.firstChild.textContent;
+//     if (itemName.toLowerCase().indexOf(text) != -1) {
+//       item.style.display = "block";
+//     } else {
+//       item.style.display = "none";
+//     }
+//   });
+// }
+
 // filter tasks
-searchTodo.addEventListener("keypress", (e) => {
+searchTodo.addEventListener("keyup", (e) => {
   let text = e.target.value.toLowerCase();
-  // let items = newTaskList.getElementsByTagName("li");
 
   //loop through all the todos on various stages
   let items = todoArea.getElementsByTagName("li");
   Array.from(items).forEach(function (item) {
     let itemName = item.firstChild.textContent;
-    if (itemName.toLowerCase().indexOf(text) == -1) {
+    if (itemName.toLowerCase().indexOf(text) != -1) {
+      item.style.display = "block";
+    } else {
       item.style.display = "none";
     }
-    // else if (text === "") {
-    //   item.style.display = "block";
-    // }
   });
 });
 
@@ -74,6 +91,7 @@ function drop(e) {
   e.preventDefault();
   var data = e.dataTransfer.getData("text");
   // e.target.append(document.getElementById(data));
+  // let moveTodo = document.getElementById(data);
   let moveTodo = document.getElementById(data);
   e.target.parentElement.appendChild(moveTodo);
 }
