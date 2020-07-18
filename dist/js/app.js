@@ -1,7 +1,8 @@
 // TODO : add items on new todo lists using js
 const todoForm = document.querySelector("#todo-form"),
   todo = document.querySelector("#input-todo"),
-  newTaskList = document.querySelector('#new-items');
+  newTaskList = document.querySelector('#new-items'),
+  todoArea = document.querySelector('#row')
 
 // create a new task
 todoForm.addEventListener("submit", (e) => {
@@ -30,5 +31,13 @@ todoForm.addEventListener("submit", (e) => {
 
   }
 
-
 });
+
+// delete a task
+todoArea.addEventListener('click', (e) => {
+
+  if (e.target.classList.contains('delete')) {
+    e.target.parentElement.remove();
+  }
+});
+
