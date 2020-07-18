@@ -41,3 +41,4 @@ todoArea.addEventListener('click', (e) => {
   }
 });
 
+// filter task
