@@ -96,6 +96,7 @@ function drop(e) {
   // let moveTodo = document.getElementById(data);
   let moveTodo = document.getElementById(data);
   e.target.parentElement.appendChild(moveTodo);
+  showAlert("todo moved", "warning");
 }
 
 //footer date
@@ -113,6 +114,3 @@ function showAlert(message, className) {
 }
 
 // add to local storage
-// function addTodoLocalStorage(todo.value)
-
-// save items to local storage
