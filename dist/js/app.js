@@ -12,7 +12,7 @@ todoForm.addEventListener("submit", (e) => {
 
   // condition to add a task
   if (todo.value === "") {
-    alert("input a task!");
+    showAlert("Please insert a task", "danger");
   } else {
     //create new task li
     let li = document.createElement("li");
@@ -31,7 +31,8 @@ todoForm.addEventListener("submit", (e) => {
     li.appendChild(deleteBtn);
     newTaskList.appendChild(li);
 
-    // reset input field
+    showAlert("todo added", "success");
+
     todo.value = "";
   }
 });
@@ -40,6 +41,7 @@ todoForm.addEventListener("submit", (e) => {
 todoArea.addEventListener("click", (e) => {
   if (e.target.classList.contains("delete")) {
     e.target.parentElement.remove();
+    showAlert("todo deleted", "warning");
   }
 });
 
@@ -99,3 +101,18 @@ function drop(e) {
 //footer date
 const year = new Date().getFullYear();
 document.querySelector(".date").innerHTML = year;
+
+// show allert message
+function showAlert(message, className) {
+  const div = document.createElement("div");
+  div.className = `text-center alert alert-${className}`;
+  div.appendChild(document.createTextNode(message));
+  document.querySelector("#alert-area").append(div);
+  //vanish in 3 seconds
+  setTimeout(() => document.querySelector(".alert").remove(), 2000);
+}
+
+// add to local storage
+// function addTodoLocalStorage(todo.value)
+
+// save items to local storage
