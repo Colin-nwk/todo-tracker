@@ -1,22 +1,26 @@
-@import './resets';
-@import './config';
-@import './utilities';
+@import "./resets";
 
+@import "./utilities";
 
+input {
+  margin-bottom: 0.6rem;
+}
 .my-header {
-    display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  div {
+    display: inline-flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
 
-    div {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-
-        p {
-
-            padding-top: 5px;
-            font-size: 2rem;
-        }
+    p {
+      padding-top: 5px;
+      font-size: 2rem;
     }
+  }
+  //   a {
+  //     display: inline;
+  //   }
 }
